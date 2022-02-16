@@ -34,6 +34,9 @@ function calculateButton() {
 
 function saveButton() {
     calculateButton();
+    const yourIncomeInput = document.getElementById('income-input');
+    const yourIncome = yourIncomeInput.value;
+
     const availableBalanceText = document.getElementById('available-balance');
     const availableBalance = availableBalanceText.innerText;
     const remainingBalanceText = document.getElementById('remaining-balance');
@@ -43,8 +46,8 @@ function saveButton() {
     const savingsText = document.getElementById('savings');
 
     if (save >= 0 && typeof (save) != "number") {
-        savingsText.innerText = (parseFloat(save) / 100) * parseFloat(availableBalance);
-        remainingBalanceText.innerText = parseFloat(availableBalanceText.innerText) - parseFloat(savingsText.innerText);
+        savingsText.innerText = (parseFloat(save) / 100) * parseFloat(yourIncome);
+        remainingBalanceText.innerText = parseFloat(availableBalance) - parseFloat(savingsText.innerText);
     }
     else {
         alert('Please give a positive number to save your money')
