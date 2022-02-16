@@ -14,7 +14,7 @@ function calculateButton() {
     const availableBalanceText = document.getElementById('available-balance');
     const totalExpensesText = document.getElementById('total-expense');
 
-    if (yourIncome > 0 && typeof (yourIncome) != "number" && food > 0 && typeof (food) != "number" && rent > 0 && typeof (rent) != "number" && shopping > 0 && typeof (shopping) != "number") {
+    if (yourIncome >= 0 && typeof (yourIncome) != "number" && food >= 0 && typeof (food) != "number" && rent >= 0 && typeof (rent) != "number" && shopping >= 0 && typeof (shopping) != "number") {
         total = parseFloat(food) + parseFloat(rent) + parseFloat(shopping);
 
         totalExpensesText.innerText = total;
@@ -29,4 +29,25 @@ function calculateButton() {
         totalExpensesText.innerText = 0;
         availableBalanceText.innerText = 0;
     }
-}
+};
+
+
+function saveButton() {
+    calculateButton();
+    const availableBalanceText = document.getElementById('available-balance');
+    const availableBalance = availableBalanceText.innerText;
+    const remainingBalanceText = document.getElementById('remaining-balance');
+
+    const saveInput = document.getElementById('save-input');
+    const save = saveInput.value;
+    const savingsText = document.getElementById('savings');
+
+    if (save >= 0 && typeof (save) != "number") {
+        savingsText.innerText = (parseFloat(save) / 100) * parseFloat(availableBalance);
+        remainingBalanceText.innerText = parseFloat(availableBalanceText.innerText) - parseFloat(savingsText.innerText);
+    }
+    else {
+        alert('Please give a positive number to save your money')
+        saveInput.value = '';
+    };
+};
