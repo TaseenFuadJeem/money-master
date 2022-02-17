@@ -62,6 +62,13 @@
                     <button class="btn btn-outline-success px-5" onclick="calculateButton()"
                         id="calculate">Calculate</button>
                 </div>
+
+                <div class="mt-3" id="error-massage" style="display:none ;">
+                    <p class="text-center bg-danger text-white p-2 rounded-pill"><i
+                            class="fa-solid fa-triangle-exclamation me-4"></i>Please Enter A Positive Number<i
+                            class="fa-solid fa-triangle-exclamation ms-4"></i></p>
+                </div>
+
                 <!-- ----------Total Expenses and Balance---------- -->
                 <div class="d-flex justify-content-evenly">
                     <p class="fw-bold border rounded p-1 m-0">Total Expenses : <span id="total-expense">0</span> $</p>
@@ -69,7 +76,7 @@
                         $</p>
                 </div>
 
-                <div class="mt-3" id="error-massage" style="display: none;">
+                <div class="mt-3" id="error-massage-calculate" style="display: none;">
                     <p class="text-center bg-danger text-white p-2 rounded-pill"><i
                             class="fa-solid fa-triangle-exclamation me-4"></i>Your expenses is higher than your
                         income<i class="fa-solid fa-triangle-exclamation ms-4"></i></p>
@@ -86,6 +93,19 @@
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-outline-success px-5" onclick="saveButton()">Save</button>
                 </div>
+
+                <div class="mt-3" id="error-massage-savings" style="display: none;">
+                    <p class="text-center bg-danger text-white p-2 rounded-pill"><i
+                            class="fa-solid fa-triangle-exclamation me-4"></i>Please Enter A Positive Number<i
+                            class="fa-solid fa-triangle-exclamation ms-4"></i></p>
+                </div>
+
+                <div class="mt-3" id="error-massage-savings-two" style="display: none;">
+                    <p class="text-center bg-danger text-white p-2 rounded-pill"><i
+                            class="fa-solid fa-triangle-exclamation me-4"></i>You don't have enough money to save<i
+                            class="fa-solid fa-triangle-exclamation ms-4"></i></p>
+                </div>
+
                 <!-- ----------Savings and Remaining Balance---------- -->
                 <div class="d-flex justify-content-evenly mt-3">
                     <p class="fw-bold border rounded p-1">Savings : <span id="savings">0</span> $</p>
@@ -93,11 +113,6 @@
                     </p>
                 </div>
 
-                <div class="mt-3" id="error-massage-savings" style="display: none;">
-                    <p class="text-center bg-danger text-white p-2 rounded-pill"><i
-                            class="fa-solid fa-triangle-exclamation me-4"></i>You don't have enough money to save<i
-                            class="fa-solid fa-triangle-exclamation ms-4"></i></p>
-                </div>
             </div>
         </section>
     </main>

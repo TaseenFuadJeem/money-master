@@ -23,9 +23,11 @@ function calculateButton() {
         foodInput.value = '';
         rentInput.value = '';
         shoppingInput.value = '';
+
+        document.getElementById('error-massage').style.display = 'none';
     }
     else {
-        alert('Please Enter A Positive Number');
+        document.getElementById('error-massage').style.display = 'block';
         yourIncomeInput.value = '';
         foodInput.value = '';
         rentInput.value = '';
@@ -53,9 +55,10 @@ function saveButton() {
         remainingBalanceText.innerText = parseFloat(availableBalance) - parseFloat(savingsText.innerText);
 
         saveInput.value = '';
+        document.getElementById('error-massage-savings').style.display = 'none';
     }
     else {
-        alert('Please give a positive number to save your money')
+        document.getElementById('error-massage-savings').style.display = 'block';
         saveInput.value = '';
     };
 };
