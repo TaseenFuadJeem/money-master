@@ -1,3 +1,6 @@
+
+// -----------event handler of calculate button------------
+
 function calculateButton() {
     const yourIncomeInput = document.getElementById('income-input');
     const yourIncome = yourIncomeInput.value;
@@ -36,6 +39,8 @@ function calculateButton() {
         availableBalanceText.innerText = 0;
     }
 };
+
+// -----------event handler of save button------------
 
 
 function saveButton() {
